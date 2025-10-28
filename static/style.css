@@ -1,0 +1,20 @@
+body {
+  background-color: #f7f9fc;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.table th {
+  text-align: center;
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+footer {
+  border-top: 2px solid #eee;
+}

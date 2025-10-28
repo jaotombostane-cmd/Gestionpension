@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4">
+    <h2>Reçu Pensionné</h2>
+    <p><strong>Nom :</strong> {{ pensionne.nom }}</p>
+    <p><strong>Prénom :</strong> {{ pensionne.prenom }}</p>
+    <p><strong>CIN :</strong> {{ pensionne.cin }}</p>
+    <p><strong>Lieu naissance :</strong> {{ pensionne.lieu_naissance }}</p>
+    <p><strong>Type de pension :</strong> {{ pensionne.type_pension }}</p>
+    <p><strong>Montant pension :</strong> {{ pensionne.montant_pension }}</p>
+    <p><strong>Montant opposition :</strong> {{ pensionne.montant_opposition }}</p>
+    <p><strong>Montant net :</strong> {{ pensionne.montant_net }}</p>
+    <p><strong>Période :</strong> {{ pensionne.periode }}</p>
+    <button onclick="window.print()" class="btn btn-success">Imprimer</button>
+</div>
+{% endblock %}

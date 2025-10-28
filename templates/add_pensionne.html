@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Ajouter Pensionné</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+<div class="container">
+    <h2>Ajouter un Pensionné</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label>Nom</label>
+            <input type="text" name="nom" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Prénom</label>
+            <input type="text" name="prenom" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>CIN</label>
+            <input type="text" name="cin" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Lieu de naissance</label>
+            <input type="text" name="lieu_naissance" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Date de naissance</label>
+            <input type="date" name="date_naissance" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Type de pension</label>
+            <select name="type_pension" class="form-control" required>
+                {% for type in types_pension %}
+                <option value="{{ type }}">{{ type }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>Montant pension</label>
+            <input type="number" name="montant_pension" step="0.01" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Montant opposition</label>
+            <input type="number" name="montant_opposition" step="0.01" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+</div>
+</body>
+</html>

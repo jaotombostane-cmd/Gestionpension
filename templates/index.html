@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card shadow p-4">
+    <h2>Pensionnés - Période : {{ periode }}</h2>
+    <a href="{{ url_for('add_pensionne') }}" class="btn btn-success mb-3">Ajouter un pensionné</a>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>CIN</th>
+                    <th>Type Pension</th>
+                    <th>Montant Pension</th>
+                    <th>Montant Opposition</th>
+                    <th>Montant Net</th>
+                    <th>Statut</th>
+                    <th>Reçu</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in pensionnes %}
+                <tr>
+                    <td>{{ p.nom }}</td>
+                    <td>{{ p.prenom }}</td>
+                    <td>{{ p.cin }}</td>
+                    <td>{{ p.type_pension }}</td>
+                    <td>{{ p.montant_pension }}</td>
+                    <td>{{ p.montant_opposition }}</td>
+                    <td>{{ p.montant_net }}</td>
+                    <td>{{ p.statut }}</td>
+                    <td>
+                        <a href="{{ url_for('ticket', id=p.id) }}" class="btn btn-info btn-sm">Imprimer</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="9" class="text-center">Aucun pensionné trouvé pour cette période.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
